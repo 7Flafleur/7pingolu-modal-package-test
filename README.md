@@ -86,7 +86,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 #### Styling
 
-The component comes with a basic inline styling defined by two constants:
+The component comes with a basic inline styling defined by two constants imported from an external file called ModalStyles.js:
 
 - **`modalBackgroundStyle`** for the outer div
 - **`modalContentStyle`** for the inner div
@@ -133,7 +133,7 @@ export default function Modal({ children, isOpen, onClose, textContent }) {
     }
 ```
 
-Styling can be easily customized by either changing the properties of these constants inside the modal file or importing them from an outer source file.
+Styling can be easily customized by either changing the properties of these constants.
 
 ## License
 
