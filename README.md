@@ -83,6 +83,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 - **`isOpen`** (boolean, required): Controls whether the modal is open or closed.
 - **`onClose`** (function, required): A callback function triggered when the modal is requested to close.
 - **`textContent`** (string,required): Text to be displayed inside modal window.
+- **`customStyles`** (object, optional): Nested object containing a `background` and `content` object.
 
 #### Styling
 
@@ -116,14 +117,16 @@ const modalContentStyle = {
   boxShadow: '0 4px 6px rgba(253, 225, 172, 0.3)'
 };
 
-
-export default function Modal({ children, isOpen, onClose, textContent }) {
+export default function Modal({ children, isOpen, onClose, textContent,customStyles={} }) {
 
       if (!isOpen) return null
 
+      const combinedBackgroundStyle = { ...modalBackgroundStyle, ...customStyles.background };
+      const combinedContentStyle = { ...modalContentStyle, ...customStyles.content };
+
       return ReactDOM.createPortal(
-        <div style={modalBackgroundStyle}>
-          <div style={modalContentStyle}>
+        <div style={combinedBackgroundStyle}>
+          <div style={combinedContentStyle}>
             <p>{textContent}</p>
             <button onClick={onClose}>Close</button>
           </div>
@@ -133,7 +136,17 @@ export default function Modal({ children, isOpen, onClose, textContent }) {
     }
 ```
 
-Styling can be easily customized by either changing the properties of these constants.
+Styling can be easily customized by passing a nested object as prop.
+
+```javascript
+const customStyles = {
+  background: { backgroundColor: 'rgba(0, 128, 128, 0.8)' },
+  content: { padding: '60px 80px', borderRadius: '15px' },
+};
+
+// Pass `customStyles` as a prop to the `Modal` component
+<Modal isOpen={isOpen} onClose={closeHandler} textContent="Custom Modal" customStyles={customStyles} />
+```
 
 ## License
 
