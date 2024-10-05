@@ -1,0 +1,27 @@
+{
+  "name": "@pingolu/7pingolu-modal-package-test",
+  "version": "1.1.1",
+  "private": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.25.7"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  }
+}
