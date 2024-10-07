@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [React Modal,React CreatePortal],
+  "author": "Pingolu",
   "license": "ISC",
-  "description": "",
+  "description": "Basic,lightweight,easily customizable modal component",
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
